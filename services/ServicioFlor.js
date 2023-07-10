@@ -1,4 +1,4 @@
-import {modeloFlor} from "../models/modeloflor.js"
+import {modeloFlor} from "../models/modeloFlor.js"
 
 export class ServicioFlores{
 

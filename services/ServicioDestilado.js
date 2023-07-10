@@ -1,4 +1,4 @@
-import { modeloDestilado } from "../models/modelodestilado.js"
+import { modeloDestilado } from "../models/modeloDestilado.js"
 
 export class ServicioDestilados{
 
