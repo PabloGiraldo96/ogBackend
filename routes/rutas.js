@@ -4,6 +4,7 @@ import {ControladorFlor} from '../controllers/ControladorFlor.js'
 import {ControladorDestilado} from '../controllers/ControladorDestilado.js'
 import {ControladorComestible} from '../controllers/ControladorComestible.js'
 import {ControladorProducto} from '../controllers/ControladorProducto.js'
+import { ControladorExtraccion } from '../controllers/ControladorExtraccion.js'
 
 //Dividir rutas de la lógica de negocio, método express.Router
 
@@ -14,6 +15,8 @@ let controladorDestilado = new ControladorDestilado()
 let controladorComestible = new ControladorComestible()
 
 let controladorProducto = new ControladorProducto()
+
+let controladorExtraccion = new ControladorExtraccion()
 
 export let rutas = express.Router()
 
@@ -70,5 +73,19 @@ rutas.get('/buscarproducto/:idproducto', controladorProducto.buscandoProducto)
 rutas.put('/editarproducto/:idproducto', controladorProducto.editandoProducto)
 //
 //rutas.delete('/borrarproducto', function  {
+//res.send('Borrando producto')
+//})
+
+// Extracciones
+
+rutas.post('/registrarextraccion', controladorExtraccion.registrandoExtraccion )
+
+rutas.get('/buscarextracciones', controladorExtraccion.buscandoExtracciones)
+
+rutas.get('/buscarextraccion/:idextraccion', controladorExtraccion.buscandoExtraccion)
+
+rutas.put('/editarextraccion/:idextraccion', controladorExtraccion.editandoExtraccion)
+//
+//rutas.delete('/borrarextraccion', function  {
 //res.send('Borrando producto')
 //})
